@@ -84,6 +84,7 @@ def recomendar_produtos(usuario_id: int, preferencias: Preferencias) -> List[Pro
     Returns:
         List[Produto]: Uma lista de produtos recomendados com base no histórico de compras e preferências.
     """
+   
     if usuario_id not in Historico_de_compras:
         raise HTTPException(
             status_code=404, detail="Histórico de compras não encontrado"
@@ -111,3 +112,4 @@ def recomendar_produtos(usuario_id: int, preferencias: Preferencias) -> List[Pro
     ]  # Preferencias de tags
 
     return produtos_recomendados
+    
