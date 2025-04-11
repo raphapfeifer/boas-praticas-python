@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from app.routers import routers_produtos, routers_usuarios
 
 
-MENSAGEM_HOME: str = "Bem-vindo à API de Recomendação de Produtos da FastAPI"
+MENSAGEM_HOME: str = "Bem-vindo à API de Recomendação de Produtos"
 
 
 # Criando o App
