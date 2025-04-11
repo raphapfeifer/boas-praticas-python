@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from app.routers import routers_produtos, routers_usuarios
 
 
-MENSAGEM_HOME: str = "Bem-vindo à API de Recomendação de Produtos"
+MENSAGEM_HOME: str = "Bem-vindo à API de Recomendação de Produtos da FastAPI"
 
 
 # Criando o App
@@ -16,5 +16,5 @@ app.include_router(routers_produtos.router)
 # Iniciando o servidor
 @app.get("/")
 def home() -> Dict[str, str]:
-    global MENSAGEM_HOME
+    MENSAGEM_HOME
     return {"mensagem": MENSAGEM_HOME}
