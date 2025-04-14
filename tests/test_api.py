@@ -44,3 +44,14 @@ def test_listar_usuarios():
     response = client.get("/usuarios/")
     assert response.status_code == 200
     assert len(response.json()) == 1
+
+
+def test_criar_historico():
+    response = client.post("/historico_compras/1", json={"produtos_ids": [1]})
+    assert response.status_code == 200
+    assert response.json() == {"mensagem": "Histórico de compras atualizado"}
+
+def test_recomendacoes():
+    response = client.post("/recomendacoes/1", json={"categorias": ["Categoria 1"], "tags": ["tag1"]})
+    assert response.status_code == 200
+    assert len(response.json())    
